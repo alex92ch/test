@@ -8,7 +8,6 @@ spec:
       volumes:
         - name: custom-tools
           emptyDir: {}
-
       initContainers:
         - name: download-tools
           image: alpine:3.8
@@ -25,6 +24,6 @@ spec:
       containers:
         - name: argocd-repo-server
           volumeMounts:
-            - mountPath: /usr/local/bin/
+            - mountPath: /usr/local/bin/kustomize_4_5_7
               name: custom-tools
               subPath: kustomize_4_5_7
