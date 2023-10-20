@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: test-project
+  name: argocd
   namespace: argocd
 spec:
   description: Test project to allow/deny resources
