@@ -24,6 +24,6 @@ spec:
       containers:
         - name: argocd-repo-server
           volumeMounts:
-            - mountPath: /usr/local/bin/kustomize_4_5_7
+            - mountPath: /usr/local/bin/custom-tools/kustomize_4_5_7
               name: custom-tools
               subPath: kustomize_4_5_7
