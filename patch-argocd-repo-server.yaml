@@ -27,4 +27,4 @@ spec:
           volumeMounts:
             - mountPath: /usr/local/bin/kustomize
               name: custom-tools
-              subPath: kustomize
+              subPath: kustomize_4_5_7
