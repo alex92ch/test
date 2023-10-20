@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: test-project
+  namespace: argocd
+spec:
+  description: Test project to allow/deny resources
+  sourceRepos:
+    - "https://github.com/alex92ch/test"
+  destinations:
+    - namespace: "*"
+      server: "https://kubernetes.default.svc"
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
