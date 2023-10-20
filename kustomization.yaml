@@ -9,3 +9,4 @@ resources:
   - test-app
 patchesStrategicMerge:
   - patch-argocd-repo-server.yaml
+  - patch-argocd-cm.yaml
