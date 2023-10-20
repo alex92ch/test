@@ -9,6 +9,8 @@ spec:
     repoURL: "https://github.com/alex92ch/test"
     targetRevision: HEAD
     path: test-app
+    kustomize:
+      version: v4.5.7
   destination:
     server: "https://kubernetes.default.svc"
     namespace: default
