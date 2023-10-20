@@ -6,5 +6,6 @@ resources:
   - app.yaml
   - ns.yaml
   - project.yaml
+  - test-app
 patchesStrategicMerge:
   - patch-argocd-repo-server.yaml
