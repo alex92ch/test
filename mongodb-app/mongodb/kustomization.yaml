@@ -1,0 +1,12 @@
+namespace: mongodb-operator
+resources:
+  - namespace.yaml
+  - clusterrolebinding.yaml
+  - clusterrole.yaml
+  - roles.yaml
+  - rolebindings.yaml
+  - customresourcedefinition.yaml
+  - deployment.yaml
+  - serviceaccounts.yaml
+  - opsmanager.yaml
+  - route.yaml

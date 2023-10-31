@@ -8,6 +8,6 @@ roleRef:
   kind: ClusterRole
   name: mongodb-enterprise-operator-mongodb-webhook
 subjects:
-- kind: ServiceAccount
-  name: mongodb-enterprise-operator
-  namespace: finnova-mongodb-operator
+  - kind: ServiceAccount
+    name: mongodb-enterprise-operator
+    namespace: mongodb-operator

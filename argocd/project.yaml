@@ -7,10 +7,27 @@ spec:
   # Project description
   description: Cluster Infrastructure
 
+  # Only permit applications to deploy to any namespace in the same cluster
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: "*"
+
+  # Allo
+
+  # Enables project orphaned resource monitoring.
+  orphanedResources:
+    warn: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: mongodb-operator
+  namespace: mongodb-operator
+spec:
+  # Project description
+  description: mongodboperator
+
   # Allow manifests to deploy from cluster-infra.git and us_neuvector.git Git repos
-  sourceRepos:
-    - "https://git.vshn.net/finnova-deployments/cluster-infra.git"
-    - "https://git.vshn.net/finnova-deployments/us_neuvector.git"
 
   # Only permit applications to deploy to any namespace in the same cluster
   destinations:
