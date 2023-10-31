@@ -6,7 +6,8 @@ metadata:
 spec:
   # Project description
   description: Cluster Infrastructure
-
+  sourceRepos:
+    - "https://github.com/alex92ch/test"
   # Only permit applications to deploy to any namespace in the same cluster
   destinations:
     - server: https://kubernetes.default.svc
@@ -26,7 +27,8 @@ metadata:
 spec:
   # Project description
   description: mongodboperator
-
+  sourceRepos:
+    - "https://github.com/alex92ch/test"
   # Allow manifests to deploy from cluster-infra.git and us_neuvector.git Git repos
 
   # Only permit applications to deploy to any namespace in the same cluster
