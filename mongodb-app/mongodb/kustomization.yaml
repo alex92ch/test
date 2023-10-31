@@ -9,4 +9,3 @@ resources:
   - deployment.yaml
   - serviceaccounts.yaml
   - opsmanager.yaml
-  - route.yaml
