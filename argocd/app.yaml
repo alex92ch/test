@@ -8,7 +8,22 @@ spec:
   source:
     repoURL: "https://github.com/alex92ch/test"
     targetRevision: HEAD
-    path: .
+    path: argocd
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mongodb-operator
+  namespace: mongodb-operator
+spec:
+  project: mongodb-operator
+  source:
+    repoURL: "https://github.com/alex92ch/test"
+    targetRevision: HEAD
+    path: mongodb-app
   destination:
     server: "https://kubernetes.default.svc"
     namespace: default
