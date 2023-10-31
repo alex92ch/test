@@ -14,6 +14,14 @@ spec:
       namespace: "*"
 
   # Allo
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+
+  # Allow certain namespaced-scoped resources to be created
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
 
   # Enables project orphaned resource monitoring.
   orphanedResources:
