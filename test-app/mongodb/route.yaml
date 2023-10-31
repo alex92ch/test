@@ -1,0 +1,10 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: ops-manager
+spec:
+  to:
+    kind: Service
+    name: ops-manager-svc-ext
+  port:
+    targetPort: external-connectivity-port

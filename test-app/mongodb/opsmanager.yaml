@@ -1,0 +1,47 @@
+---
+apiVersion: mongodb.com/v1
+kind: MongoDBOpsManager
+metadata:
+  name: ops-manager
+spec:
+  # the number of Ops Manager instances to run. Set to value bigger
+  # than 1 to get high availability and upgrades without downtime
+  replicas: 1
+
+  # the version of Ops Manager distro to use
+  version: 6.0.0
+  adminCredentials: ops-manager-admin
+
+  # optional. The Ops Manager configuration. All the values must be of type string
+  configuration:
+    # passing mms.ignoreInitialUiSetup=true allows to avoid the setup wizard in Ops Manager. Note, that
+    # this requires to set some mandatory configuration properties, see
+    # https://docs.opsmanager.mongodb.com/current/reference/configuration/index.html#mms.ignoreInitialUiSetup
+    mms.ignoreInitialUiSetup: "true"
+    automation.versions.source: mongodb
+    mms.adminEmailAddr: support@example.com
+    mms.fromEmailAddr: support@example.com
+    mms.replyToEmailAddr: support@example.com
+    mms.mail.hostname: email-smtp.us-east-1.amazonaws.com
+    mms.mail.port: "465"
+    mms.mail.ssl: "true"
+    mms.mail.transport: smtp
+    mms.minimumTLSVersion: TLSv1.2
+
+  externalConnectivity:
+    # LoadBalancer|NodePort
+    type: NodePort
+    # optional. Corresponds to NodePort port
+    port: 30100
+
+  # the application database backing Ops Manager. Replica Set is the only supported type
+  # Application database has the SCRAM-SHA authentication mode always enabled
+  applicationDatabase:
+    members: 3
+    version: 5.0.5-ent
+    # optional. Allows to pass custom MongoDB process configuration
+    additionalMongodConfig:
+      operationProfiling:
+        mode: slowOp
+    podSpec:
+      cpu: '0.25'
