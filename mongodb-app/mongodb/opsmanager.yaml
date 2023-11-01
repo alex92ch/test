@@ -28,20 +28,5 @@ spec:
     mms.mail.transport: smtp
     mms.minimumTLSVersion: TLSv1.2
 
-  externalConnectivity:
-    # LoadBalancer|NodePort
-    type: NodePort
-    # optional. Corresponds to NodePort port
-    port: 30100
-
   # the application database backing Ops Manager. Replica Set is the only supported type
   # Application database has the SCRAM-SHA authentication mode always enabled
-  applicationDatabase:
-    members: 3
-    version: 5.0.5-ent
-    # optional. Allows to pass custom MongoDB process configuration
-    additionalMongodConfig:
-      operationProfiling:
-        mode: slowOp
-    podSpec:
-      cpu: '0.25'
