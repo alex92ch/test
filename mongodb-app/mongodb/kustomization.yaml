@@ -8,4 +8,4 @@ resources:
   - customresourcedefinition.yaml
   - deployment.yaml
   - serviceaccounts.yaml
-  - opsmanager.yaml
+  # - opsmanager.yaml
